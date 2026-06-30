@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Apr 10 20:56:39 2026
-
-@author: xl3138
-"""
-
 
 from typing import Callable, Dict
 import numpy as np

@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Dec  1 10:48:55 2024
 
-@author: Xiao Xia Liang
-"""
 from sklearn.metrics import r2_score, root_mean_squared_error, mean_absolute_percentage_error, mean_absolute_error
 import pandas as pd
 from os.path import join

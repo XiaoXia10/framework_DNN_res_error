@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 10:21:28 2026
-
-@author: xl3138
-"""
 
 import torch
 from os.path import join

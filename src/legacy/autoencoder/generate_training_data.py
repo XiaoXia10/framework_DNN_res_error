@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed May 29 11:33:32 2024
-Getting Training data
-@author: Xiao Xia Liang
-""" 
 import numpy as np
 import pandas as pd
 from os.path import join
@@ -12,7 +7,6 @@ import argparse
 from  utils import standardize_df
 from os.path import join, dirname, abspath
 
-# df = pd.read_csv(join("/Users/xl3138/workspaces/data_resolution_study/lstm/karst_data/1h", "df.csv"), index_col=0, parse_dates=True)
 def get_parsers():
     
     freq = "24h" ##[1h, 4h, 8h, 12h, 24h]
@@ -41,14 +35,10 @@ def get_parsers():
     parser.add_argument("--seq_length_x", type=int, default=seq_length_x, help="X Sequence Length.",)
     parser.add_argument("--seq_length_y", type=int, default=seq_length_y, help="Y Sequence Length.",)
     parser.add_argument("--shift", type=int, default=shift, help="Default is seq_length_x", ) # this is a sequence window shift
-    # parser.add_argument("--timestep", type=str, default=freq, help="Time step frequency", )
-    
+  
     parser.add_argument("--output_dir", type=str, default=output_dir, help="Output data for model training.",)
     parser.add_argument("--data_dir", type=str, default=data_dir, help="Data directory with resampled time series data",)
     parser.add_argument('--train_percent', type=float, default=0.8, help='The percentage of data used for model training and the rest for validation')
-
-    
-    # parser.add_argument("--freq_data_dir", type=str, default="/Users/xl3138/workspaces/data_resolution_study/lstm/"+dataset+"/"+freq, help="Data dir")
     
     parser.add_argument("--test_start_time", type=str, default=test_begins, help="Start time to end of time series")
     parser.add_argument("--train_end_time", type=str, default=train_ends, help="End time of training data")

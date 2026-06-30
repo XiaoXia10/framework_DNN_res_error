@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May 30 11:30:35 2024
-
-@author: Xiao Xia Liang
-"""
 
 import argparse
 import pandas as pd

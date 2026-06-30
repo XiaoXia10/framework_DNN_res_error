@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 31 19:29:36 2026
-
-@author: xl3138
-"""
 
 import pandas as pd
 from os.path import join

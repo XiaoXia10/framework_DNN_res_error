@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed May 29 13:52:34 2024
 
-@author: Xiao Xia Liang
-"""
 import argparse
 import os 
 from durbango import pickle_save

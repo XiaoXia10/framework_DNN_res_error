@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 28 13:05:23 2024
-
-@author: Xiao Xia Liang
-"""
 
 import tensorflow as tf
 from create_lstm_model import create_model

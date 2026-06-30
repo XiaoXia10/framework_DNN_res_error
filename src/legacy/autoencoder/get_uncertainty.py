@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 31 19:57:19 2026
-
-@author: xl3138
-"""
 
 import tensorflow as tf
 from model_autoencoder import auto_encoder_gru, auto_encoder_lstm

@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May 28 15:39:16 2024
 
-@author: Xiao Xia Liang
-"""
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras import callbacks
 import pandas as pd

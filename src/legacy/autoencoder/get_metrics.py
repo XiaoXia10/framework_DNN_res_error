@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 31 20:51:31 2026
-
-@author: xl3138
-"""
 
 import pandas as pd 
 from os.path import join 
@@ -27,7 +22,7 @@ def get_metrics(args):
     results = evaluator.get_metrics_by_list_names(list_metrics)
     
     ######## Save results into a file ########
-    ######## Beware!!!! This is a pickle file, can only be open with the same environment
+    ######## This is a pickle file, can only be open with the same environment
     with open(join(args.output_dir, "metric.json"), 'wb') as file:
         pickle.dump(results, file)
         

@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 15 14:17:50 2026
-
-@author: xl3138
-"""
 import pandas as pd
 from os.path import join
 from utils import get_shared_arg_parser

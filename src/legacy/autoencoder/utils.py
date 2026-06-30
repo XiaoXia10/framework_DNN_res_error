@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 31 19:14:47 2026
-
-@author: xl3138
-"""
 
 import torch
 from torch.utils.data import DataLoader, TensorDataset

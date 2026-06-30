@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-BayesianLSTM — LSTM with residual connections, LayerNorm, and 4 MC dropout points.
-Registered as "bayesian_lstm" in the model registry.
+LSTM with residual connections, LayerNorm, and 4 MC dropout points.
+Registered as "lstm" in the model registry.
 """
 
 import torch

@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May 28 14:56:57 2024
 
-@author: Xiao Xia Liang
-"""
 from tensorflow.keras.optimizers import Adam
 import tensorflow as tf
 from tensorflow.keras.models import Model
