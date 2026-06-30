@@ -27,7 +27,10 @@ import yaml
 from permetrics.regression import RegressionMetric
 from framework.model_registry import get_backend, build_model, build_tf_model
 
-
+import torch
+from torch.utils.data import DataLoader, TensorDataset
+import torch.nn as nn
+import torch.optim as optim
 # ── Shared helpers ─────────────────────────────────────────────────────────────
 
 def load_config(path):
@@ -103,9 +106,6 @@ def _save_loss_plot(train_losses, val_losses, config, ddir, resolution, horizon)
 
 def _load_split_pt(data_dir, split, batch_size, shuffle):
     """Load one data split as a PyTorch DataLoader with NaN filtering."""
-    import torch
-    from torch.utils.data import DataLoader, TensorDataset
-
     x = torch.tensor(np.load(os.path.join(data_dir, f"x_{split}.npy"))).float()
     y = torch.tensor(np.load(os.path.join(data_dir, f"y_{split}.npy"))).float()
     valid = ~(torch.isnan(x).any(dim=(1, 2)) | torch.isnan(y).any(dim=(1, 2)))
@@ -115,8 +115,6 @@ def _load_split_pt(data_dir, split, batch_size, shuffle):
 
 def _mc_dropout_predict_pt(model, data_mean, data_std, input_data, num_real, mc_dropout_rate):
     """PyTorch MC dropout: run `num_real` forward passes in train() mode."""
-    import torch
-
     for module in model.modules():
         if isinstance(module, torch.nn.Dropout):
             module.p = mc_dropout_rate
@@ -131,9 +129,6 @@ def _mc_dropout_predict_pt(model, data_mean, data_std, input_data, num_real, mc_
 
 
 def _train_pytorch(config, ddir, resolution, horizon):
-    import torch
-    import torch.nn as nn
-    import torch.optim as optim
 
     model     = build_model(
         config["model"],
@@ -201,6 +196,11 @@ def _train_pytorch(config, ddir, resolution, horizon):
         torch.tensor(x_test).float(),
         config["num_real"], config["mc_dropout_rate"],
     )
+
+    os.makedirs(os.path.join(ddir, "outputs"), exist_ok=True)
+
+    np.save(os.path.join(ddir, "outputs", "mean_prediction.npy"), mean_pred)
+    np.save(os.path.join(ddir, "outputs", "uncertainty.npy"), uncertainty)
 
     return _save_outputs_and_metrics(
         config, ddir, resolution, horizon,

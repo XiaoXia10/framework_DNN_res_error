@@ -9,7 +9,6 @@ from os.path import join
 from sklearn.metrics import r2_score, root_mean_squared_error, mean_absolute_percentage_error, mean_absolute_error
 
 
-
 def _destandardize_pred(args, realy, yhat):
     
     df = pd.read_csv(args.df, parse_dates=True, index_col=0)
